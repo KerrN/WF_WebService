@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WF_webService.WF_Service" CodeBehind="WF_Service.svc.cs" %>

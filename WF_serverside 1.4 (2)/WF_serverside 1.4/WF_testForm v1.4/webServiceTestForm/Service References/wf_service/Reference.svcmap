@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c559d4d3-702d-4f2f-aa70-a982b8788e5d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.SortedList`2" Category="Dictionary" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://student.mydesign.central.wa.edu.au/cf_wayfinding_webservice/wf_service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WF_Service.xsd" MetadataType="Schema" ID="f1071e97-aa4c-4a92-85a3-9e29f625f813" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="WF_Service1.xsd" MetadataType="Schema" ID="5ec8f11e-c400-48f3-a3e4-62f73d7fe2e2" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="WF_Service.disco" MetadataType="Disco" ID="8de6ffb1-69c5-4b52-bb49-94a1077b3a72" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?disco" />
+    <MetadataFile FileName="WF_Service2.xsd" MetadataType="Schema" ID="08fcf38d-ae32-46d7-822e-95a830a956ef" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="WF_Service3.xsd" MetadataType="Schema" ID="56bfde13-44e5-4b68-978a-a00639566e18" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="WF_Service.wsdl" MetadataType="Wsdl" ID="ebd524ac-f6b3-489c-b79a-4f09256f1268" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

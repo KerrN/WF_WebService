@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WF_Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WF_webService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="WF_Service_Interface_checkServiceConn_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkServiceConn" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_checkServiceConn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkServiceConnResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_checkDBConn_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkDBConn" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_checkDBConn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkDBConnResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_getImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getImage" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_getImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_SearchCampus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCampus" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_SearchCampus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCampusResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_CampusVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CampusVersion" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_CampusVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CampusVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_SearchRooms_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRooms" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_SearchRooms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRoomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_SearchServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchServices" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_SearchServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_ResolvePath_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResolvePath" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_ResolvePath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResolvePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_GetResolvePathLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResolvePathLists" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_GetResolvePathLists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResolvePathListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_RunImageProcessor_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunImageProcessor" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_RunImageProcessor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunImageProcessorResponse" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_UpdateMaps_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaps" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_UpdateMaps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMapsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WF_Service_Interface">
+    <wsdl:operation name="checkServiceConn">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/checkServiceConn" message="tns:WF_Service_Interface_checkServiceConn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/checkServiceConnResponse" message="tns:WF_Service_Interface_checkServiceConn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkDBConn">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/checkDBConn" message="tns:WF_Service_Interface_checkDBConn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/checkDBConnResponse" message="tns:WF_Service_Interface_checkDBConn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/getImage" message="tns:WF_Service_Interface_getImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/getImageResponse" message="tns:WF_Service_Interface_getImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCampus">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/SearchCampus" message="tns:WF_Service_Interface_SearchCampus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/SearchCampusResponse" message="tns:WF_Service_Interface_SearchCampus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CampusVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/CampusVersion" message="tns:WF_Service_Interface_CampusVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/CampusVersionResponse" message="tns:WF_Service_Interface_CampusVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRooms">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/SearchRooms" message="tns:WF_Service_Interface_SearchRooms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/SearchRoomsResponse" message="tns:WF_Service_Interface_SearchRooms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchServices">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/SearchServices" message="tns:WF_Service_Interface_SearchServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/SearchServicesResponse" message="tns:WF_Service_Interface_SearchServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolvePath">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/ResolvePath" message="tns:WF_Service_Interface_ResolvePath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/ResolvePathResponse" message="tns:WF_Service_Interface_ResolvePath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResolvePathLists">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/GetResolvePathLists" message="tns:WF_Service_Interface_GetResolvePathLists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/GetResolvePathListsResponse" message="tns:WF_Service_Interface_GetResolvePathLists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunImageProcessor">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/RunImageProcessor" message="tns:WF_Service_Interface_RunImageProcessor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/RunImageProcessorResponse" message="tns:WF_Service_Interface_RunImageProcessor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaps">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/UpdateMaps" message="tns:WF_Service_Interface_UpdateMaps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/UpdateMapsResponse" message="tns:WF_Service_Interface_UpdateMaps_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_WF_Service_Interface" type="tns:WF_Service_Interface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkServiceConn">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/checkServiceConn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkDBConn">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/checkDBConn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getImage">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/getImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCampus">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/SearchCampus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CampusVersion">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/CampusVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRooms">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/SearchRooms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchServices">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/SearchServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResolvePath">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/ResolvePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResolvePathLists">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/GetResolvePathLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunImageProcessor">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/RunImageProcessor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaps">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/UpdateMaps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WF_Service">
+    <wsdl:port name="BasicHttpBinding_WF_Service_Interface" binding="tns:BasicHttpBinding_WF_Service_Interface">
+      <soap:address location="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

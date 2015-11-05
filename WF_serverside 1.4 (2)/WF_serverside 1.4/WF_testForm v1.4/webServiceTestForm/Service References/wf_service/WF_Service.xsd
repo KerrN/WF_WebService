@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WF_webService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WF_webService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SOAP_ResolvePath">
+    <xs:sequence>
+      <xs:element name="_x003C_buildingImage_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_buildingTitle_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_campusTo_x003E_k__BackingField" nillable="true" type="q1:ArrayOfdouble" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_maps_x003E_k__BackingField" nillable="true" type="q2:ArrayOfArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SOAP_ResolvePath" nillable="true" type="tns:SOAP_ResolvePath" />
+  <xs:complexType name="ArrayOfArrayOfWaypoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfWaypoint" nillable="true" type="tns:ArrayOfWaypoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfWaypoint" nillable="true" type="tns:ArrayOfArrayOfWaypoint" />
+  <xs:complexType name="ArrayOfWaypoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Waypoint" nillable="true" type="tns:Waypoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWaypoint" nillable="true" type="tns:ArrayOfWaypoint" />
+  <xs:complexType name="Waypoint">
+    <xs:sequence>
+      <xs:element name="_x003C_buildingID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_coordX_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_coordY_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_floorID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_roomName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_transitionMode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_waypointIDPrevDis_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_waypointIDPrev_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_waypointID_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Waypoint" nillable="true" type="tns:Waypoint" />
+</xs:schema>
