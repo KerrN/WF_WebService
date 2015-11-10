@@ -295,19 +295,49 @@ namespace WF_webService
 
         // Returns SortedList<int WaypointID, string RoomName> from Waypoints
         // Requires WHERE Campus clause as input
-        public SortedList<int, string> GetRooms(string CampusID)
+        public List<SOAP_Get_Rooms> GetRooms(string CampusID)
         {
             // Initialise return objects
-            SortedList<int, string> rooms = new SortedList<int, string>();
+            List<SOAP_Get_Rooms> rooms = new List<SOAP_Get_Rooms>();
 
             // Generate SQL statement, This is not the same SQL as normal due to the nature of the specific function
-            string sql = "SELECT DISTINCT Waypoint_ID, Room_Name FROM waypoints JOIN buildings ON waypoints.Building_ID = buildings.Building_ID WHERE waypoints.Room_name IS NOT NULL";
+            string sql = "SELECT DISTINCT Waypoint_ID, Room_Name, waypoints.Building_ID FROM waypoints JOIN buildings ON waypoints.Building_ID = buildings.Building_ID WHERE waypoints.Room_name IS NOT NULL";
             if (CampusID != null)
             {
                 sql += " AND buildings.Campus_ID = '" + CampusID + "'";
             }
-
+            SortedList<int,string> locs = new SortedList<int,string>();
             // Create try-catch to open connection
+                try
+            {
+                using (MySqlConnection dbConn = new MySqlConnection(connStr))
+                {
+                    // Initialise
+                    MySqlCommand roomSQL = new MySqlCommand("SELECT DISTINCT campus_locations.Campus_Location_Category_ID, campus_locations.Waypoint_ID FROM campus_locations JOIN waypoints ON waypoints.Waypoint_ID = campus_locations.Waypoint_ID WHERE waypoints.Room_name IS NOT NULL", dbConn);
+                    MySqlDataReader dbReader;
+
+                    // Open connection
+                    dbConn.Open();
+                    // Excecute Query
+                    dbReader = roomSQL.ExecuteReader();
+
+                    // While the reader has a next-row
+                    while (dbReader.Read())
+                    {
+                        // Get all values as temp values
+                        int i = (int)dbReader["Waypoint_ID"];
+                        string s = (string)dbReader["Capus_Location_Category_ID"];
+                        locs.Add(i,s);
+                    }
+
+                }
+            } catch (Exception e)
+                {
+
+                }
+
+                int index = 0;
+
             try
             {
                 using (MySqlConnection dbConn = new MySqlConnection(connStr))
@@ -327,8 +357,15 @@ namespace WF_webService
                         // Get all values as temp values
                         int waypointID = (int)dbReader["Waypoint_ID"];
                         string campusID = (string)dbReader["Room_Name"];
+                        int buildingID = (int)dbReader["Building_ID"];
+                        string catID;
+                        if(!locs.TryGetValue(waypointID, out  catID))
+                        {
+                            catID = "NoImage";
+                        }
+                    
                         // Then add these into a new object to be added to the return
-                        rooms.Add(waypointID, campusID);
+                        rooms.Add(new SOAP_Get_Rooms(waypointID,campusID,buildingID,catID));
                     }
 
                     // Return

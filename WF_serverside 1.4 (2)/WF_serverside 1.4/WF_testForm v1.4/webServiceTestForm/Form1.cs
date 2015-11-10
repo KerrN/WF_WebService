@@ -69,8 +69,8 @@ namespace webServiceTestForm
             string text = "";
             foreach(string[] c in result)
             {
-                text += "CampusID: " + c[0] + ", CampusName: " + c[1] + Environment.NewLine;
-                text += "CampusLat-Long: " + c[2] + ", " + c[3] + ", CampusZoom: " + c[4] + Environment.NewLine;
+                text += "CampusID: " + c[0] + ", CampusName: " + c[1] + ", CampusVersion: " + c[2] + Environment.NewLine;
+                text += "CampusLat-Long: " + c[3] + ", " + c[4] + ", CampusZoom: " + c[5] + Environment.NewLine;
                 text += Environment.NewLine;
             }
             txtOutput.Text = text;
@@ -82,12 +82,12 @@ namespace webServiceTestForm
             WF_Service_InterfaceClient service = new WF_Service_InterfaceClient();
 
             string campus = txtRoomCampus.Text;
-            SortedList<int, string> result = service.SearchRooms(campus);
+            SOAP_Get_Rooms[] result = service.SearchRooms(campus);
 
             string text = "";
-            foreach (int k in result.Keys)
+            foreach (SOAP_Get_Rooms r in result)
             {
-                text += "WaypointID: " + k + ", RoomName: " + result[k];
+                text += "WaypointID: " + r.waypointIDk__BackingField + ", RoomName: " + r.roomNamek__BackingField + " , BuildingID: "+r.building_IDk__BackingField + " , image: "+r.imagek__BackingField;
                 text += Environment.NewLine;
             }
             txtOutput.Text = text;

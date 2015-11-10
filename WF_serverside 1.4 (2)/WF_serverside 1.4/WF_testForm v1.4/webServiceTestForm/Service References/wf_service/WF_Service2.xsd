@@ -76,7 +76,7 @@
   <xs:element name="SearchRoomsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SearchRoomsResult" nillable="true" type="q2:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WF_webService" minOccurs="0" name="SearchRoomsResult" nillable="true" type="q2:ArrayOfSOAP_Get_Rooms" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

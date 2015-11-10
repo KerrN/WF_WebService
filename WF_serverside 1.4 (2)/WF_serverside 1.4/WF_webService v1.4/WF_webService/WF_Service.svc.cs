@@ -56,7 +56,7 @@ namespace WF_webService
                 byte[] result = new byte[fs.Length];
                 fs.Read(result, 0, (int)fs.Length);
                 fs.Close();
-                System.IO.File.Delete(ImageURL);
+               // System.IO.File.Delete(ImageURL);
                 return result;
             }
             catch
@@ -88,7 +88,7 @@ namespace WF_webService
             foreach(Campus c in campuses.Values)
             {
                 // Add to return
-                result.Add(new string[]{c.campusID, c.campusName, c.campusLat.ToString(), c.campusLong.ToString(), c.campusZoom.ToString()});
+                result.Add(new string[]{c.campusID, c.campusName, c.campusVersion.ToString(), c.campusLat.ToString(), c.campusLong.ToString(), c.campusZoom.ToString()});
             }
 
             // Return
@@ -97,14 +97,14 @@ namespace WF_webService
 
         [WebMethod]
         // Returns SortedList<int, string> of all WaypointIDs with a RoomName, and thier RoomName
-        public SortedList<int, string> SearchRooms(string CampusID)
+        public List<SOAP_Get_Rooms> SearchRooms(string CampusID)
         {
             if(CampusID == "")
             {
                 CampusID = null;
             }
             // Get all Rooms from Database
-            SortedList<int, string> result = db.GetRooms(CampusID);
+            List<SOAP_Get_Rooms> result = db.GetRooms(CampusID);
             // Return
             return result;
         }

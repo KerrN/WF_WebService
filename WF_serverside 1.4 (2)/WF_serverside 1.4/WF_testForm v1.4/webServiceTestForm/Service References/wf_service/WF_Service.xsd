@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WF_webService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WF_webService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://student.mydesign.central.wa.edu.au/cf_Wayfinding_WebService/WF_Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfSOAP_Get_Rooms">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SOAP_Get_Rooms" nillable="true" type="tns:SOAP_Get_Rooms" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSOAP_Get_Rooms" nillable="true" type="tns:ArrayOfSOAP_Get_Rooms" />
+  <xs:complexType name="SOAP_Get_Rooms">
+    <xs:sequence>
+      <xs:element name="_x003C_building_ID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_image_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_roomName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_waypointID_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SOAP_Get_Rooms" nillable="true" type="tns:SOAP_Get_Rooms" />
   <xs:complexType name="SOAP_ResolvePath">
     <xs:sequence>
       <xs:element name="_x003C_buildingImage_x003E_k__BackingField" nillable="true" type="xs:string" />
