@@ -82,12 +82,12 @@ namespace webServiceTestForm
             WF_Service_InterfaceClient service = new WF_Service_InterfaceClient();
 
             string campus = txtRoomCampus.Text;
-            SOAP_Get_Rooms[] result = service.SearchRooms(campus);
+            string[][] result = service.SearchRooms(campus);
 
             string text = "";
-            foreach (SOAP_Get_Rooms r in result)
+            foreach (string[] r in result)
             {
-                text += "WaypointID: " + r.waypointIDk__BackingField + ", RoomName: " + r.roomNamek__BackingField + " , BuildingID: "+r.building_IDk__BackingField + " , image: "+r.imagek__BackingField;
+                text += "WaypointID: " + r[0] + ", RoomName: " + r[1] + " , BuildingID: "+r[2] + " , image: "+r[3];
                 text += Environment.NewLine;
             }
             txtOutput.Text = text;

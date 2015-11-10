@@ -28,7 +28,7 @@ namespace WF_webService
         int CampusVersion(string CampusID);
 
         [OperationContract]
-        List<SOAP_Get_Rooms> SearchRooms(string CampusID);
+        string[][] SearchRooms(string CampusID);
 
         [OperationContract]
         SortedList<int, string> SearchServices(string CampusID);

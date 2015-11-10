@@ -97,14 +97,14 @@ namespace WF_webService
 
         [WebMethod]
         // Returns SortedList<int, string> of all WaypointIDs with a RoomName, and thier RoomName
-        public List<SOAP_Get_Rooms> SearchRooms(string CampusID)
+        public string[][] SearchRooms(string CampusID)
         {
             if(CampusID == "")
             {
                 CampusID = null;
             }
             // Get all Rooms from Database
-            List<SOAP_Get_Rooms> result = db.GetRooms(CampusID);
+            string[][] result = db.GetRooms(CampusID);
             // Return
             return result;
         }

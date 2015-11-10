@@ -295,10 +295,10 @@ namespace WF_webService
 
         // Returns SortedList<int WaypointID, string RoomName> from Waypoints
         // Requires WHERE Campus clause as input
-        public List<SOAP_Get_Rooms> GetRooms(string CampusID)
+        public string[][] GetRooms(string CampusID)
         {
             // Initialise return objects
-            List<SOAP_Get_Rooms> rooms = new List<SOAP_Get_Rooms>();
+            List<string[]> rooms = new List<string[]>();
 
             // Generate SQL statement, This is not the same SQL as normal due to the nature of the specific function
             string sql = "SELECT DISTINCT Waypoint_ID, Room_Name, waypoints.Building_ID FROM waypoints JOIN buildings ON waypoints.Building_ID = buildings.Building_ID WHERE waypoints.Room_name IS NOT NULL";
@@ -326,7 +326,7 @@ namespace WF_webService
                     {
                         // Get all values as temp values
                         int i = (int)dbReader["Waypoint_ID"];
-                        string s = (string)dbReader["Capus_Location_Category_ID"];
+                        string s = (string)dbReader["Campus_Location_Category_ID"];
                         locs.Add(i,s);
                     }
 
@@ -365,11 +365,11 @@ namespace WF_webService
                         }
                     
                         // Then add these into a new object to be added to the return
-                        rooms.Add(new SOAP_Get_Rooms(waypointID,campusID,buildingID,catID));
+                        rooms.Add(new string[]{""+waypointID,campusID,""+buildingID,catID});
                     }
 
                     // Return
-                    return rooms;
+                    return rooms.ToArray();
                 }
             }
             // If connection fails

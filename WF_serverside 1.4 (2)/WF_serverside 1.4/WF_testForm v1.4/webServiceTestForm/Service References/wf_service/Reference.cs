@@ -15,95 +15,6 @@ namespace webServiceTestForm.wf_service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SOAP_Get_Rooms", Namespace="http://schemas.datacontract.org/2004/07/WF_webService")]
-    [System.SerializableAttribute()]
-    public partial class SOAP_Get_Rooms : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private int building_IDk__BackingFieldField;
-        
-        private string imagek__BackingFieldField;
-        
-        private string roomNamek__BackingFieldField;
-        
-        private int waypointIDk__BackingFieldField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<building_ID>k__BackingField", IsRequired=true)]
-        public int building_IDk__BackingField {
-            get {
-                return this.building_IDk__BackingFieldField;
-            }
-            set {
-                if ((this.building_IDk__BackingFieldField.Equals(value) != true)) {
-                    this.building_IDk__BackingFieldField = value;
-                    this.RaisePropertyChanged("building_IDk__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<image>k__BackingField", IsRequired=true)]
-        public string imagek__BackingField {
-            get {
-                return this.imagek__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.imagek__BackingFieldField, value) != true)) {
-                    this.imagek__BackingFieldField = value;
-                    this.RaisePropertyChanged("imagek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<roomName>k__BackingField", IsRequired=true)]
-        public string roomNamek__BackingField {
-            get {
-                return this.roomNamek__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.roomNamek__BackingFieldField, value) != true)) {
-                    this.roomNamek__BackingFieldField = value;
-                    this.RaisePropertyChanged("roomNamek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<waypointID>k__BackingField", IsRequired=true)]
-        public int waypointIDk__BackingField {
-            get {
-                return this.waypointIDk__BackingFieldField;
-            }
-            set {
-                if ((this.waypointIDk__BackingFieldField.Equals(value) != true)) {
-                    this.waypointIDk__BackingFieldField = value;
-                    this.RaisePropertyChanged("waypointIDk__BackingField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SOAP_ResolvePath", Namespace="http://schemas.datacontract.org/2004/07/WF_webService")]
     [System.SerializableAttribute()]
     public partial class SOAP_ResolvePath : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -390,10 +301,10 @@ namespace webServiceTestForm.wf_service {
         System.Threading.Tasks.Task<int> CampusVersionAsync(string CampusID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WF_Service_Interface/SearchRooms", ReplyAction="http://tempuri.org/WF_Service_Interface/SearchRoomsResponse")]
-        webServiceTestForm.wf_service.SOAP_Get_Rooms[] SearchRooms(string CampusID);
+        string[][] SearchRooms(string CampusID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WF_Service_Interface/SearchRooms", ReplyAction="http://tempuri.org/WF_Service_Interface/SearchRoomsResponse")]
-        System.Threading.Tasks.Task<webServiceTestForm.wf_service.SOAP_Get_Rooms[]> SearchRoomsAsync(string CampusID);
+        System.Threading.Tasks.Task<string[][]> SearchRoomsAsync(string CampusID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WF_Service_Interface/SearchServices", ReplyAction="http://tempuri.org/WF_Service_Interface/SearchServicesResponse")]
         System.Collections.Generic.SortedList<int, string> SearchServices(string CampusID);
@@ -493,11 +404,11 @@ namespace webServiceTestForm.wf_service {
             return base.Channel.CampusVersionAsync(CampusID);
         }
         
-        public webServiceTestForm.wf_service.SOAP_Get_Rooms[] SearchRooms(string CampusID) {
+        public string[][] SearchRooms(string CampusID) {
             return base.Channel.SearchRooms(CampusID);
         }
         
-        public System.Threading.Tasks.Task<webServiceTestForm.wf_service.SOAP_Get_Rooms[]> SearchRoomsAsync(string CampusID) {
+        public System.Threading.Tasks.Task<string[][]> SearchRoomsAsync(string CampusID) {
             return base.Channel.SearchRoomsAsync(CampusID);
         }
         
