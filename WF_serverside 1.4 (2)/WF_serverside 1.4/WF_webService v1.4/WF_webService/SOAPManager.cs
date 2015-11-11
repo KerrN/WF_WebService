@@ -10,14 +10,16 @@ namespace WF_webService
     {
         public SOAP_ResolvePath(double CampusToLat, double CampusToLong, string BuildingTitle, string BuildingImage, string[][] Maps)
         {
-            campusTo = new double[] { CampusToLat, CampusToLong };
-            buildingTitle = BuildingTitle;
-            buildingImage = BuildingImage;
+            //campusTo = new double[] { CampusToLat, CampusToLong };
+            //buildingTitle = BuildingTitle;
+           // buildingImage = BuildingImage;
             maps = Maps;
+            getAProperSOAPClient = new string[]{""+CampusToLat,""+CampusToLong,BuildingTitle,BuildingImage};
         }
-        public double[] campusTo { get; set; }
-        public string buildingTitle { get; set; }
-        public string buildingImage { get; set; }
+        //public double[] campusTo { get; set; }
+       // public string buildingTitle { get; set; }
+       // public string buildingImage { get; set; }
+        public string[] getAProperSOAPClient { get; set; }
         public string[][] maps { get; set; }
     }
 

@@ -91,3 +91,9 @@ C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webServi
 C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\bin\WF_webService.pdb
 C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\bin\MySql.Data.dll
 C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\obj\Debug\WF_webService.pdb
+C:\Users\Jack\Documents\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\bin\WF_webService.dll.config
+C:\Users\Jack\Documents\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\bin\WF_webService.dll
+C:\Users\Jack\Documents\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\bin\WF_webService.pdb
+C:\Users\Jack\Documents\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\obj\Debug\WF_webService.csprojResolveAssemblyReference.cache
+C:\Users\Jack\Documents\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\obj\Debug\WF_webService.dll
+C:\Users\Jack\Documents\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_webService v1.4\WF_webService\obj\Debug\WF_webService.pdb
