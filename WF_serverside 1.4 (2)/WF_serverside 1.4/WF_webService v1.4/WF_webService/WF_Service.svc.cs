@@ -50,18 +50,16 @@ namespace WF_webService
             // returns an image from the file system as a byte array 
             // ImageURL = HostingEnvironment.ApplicationPhysicalPath + ImageURL;
             //ImageURL += ".png";
-            try
-            {
+          
                 System.IO.FileStream fs = System.IO.File.Open(ImageURL, FileMode.Open, FileAccess.Read);
                 byte[] result = new byte[fs.Length];
                 fs.Read(result, 0, (int)fs.Length);
                 fs.Close();
-               // System.IO.File.Delete(ImageURL);
+                if(!ImageURL.Contains("Ignore"))
+                    System.IO.File.Delete(ImageURL);
                 return result;
-            }
-            catch
-            {}
-            return null;
+           
+       
         }
 
         [WebMethod]
