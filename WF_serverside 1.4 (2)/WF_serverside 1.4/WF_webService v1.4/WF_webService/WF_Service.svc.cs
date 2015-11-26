@@ -129,6 +129,7 @@ namespace WF_webService
             Waypoint source = db.GetWaypoints("Waypoint_ID = '" + WaypointID +"'")[WaypointID];
             Building sourceBuilding = db.GetBuildings("Building_ID = '" + source.buildingID + "'")[source.buildingID];
             Campus sourceCampus = db.GetCampuses("Campus_ID = '" + sourceBuilding.campusID + "'")[sourceBuilding.campusID];
+            int isService = db.ServiceColor(WaypointID);
             
             // Get all collection of objects to be searched once to avoid continious Database queries
             SortedList<int, Waypoint> searchable = db.GetWaypoints("Building_ID = '" + source.buildingID + "'");
@@ -226,7 +227,10 @@ namespace WF_webService
 
                 // returns the final image
                 //string imagePath = "";
-                string imagePath = new ImageProccessor().GenerateImage(tempFloor.floorMap, tempFloor.floorColorMap, source.roomName, sequence, 0, 0, 1);
+                string room = source.roomName;
+                if (isService != -1)
+                    room = "X0" + isService;
+                string imagePath = new ImageProccessor().GenerateImage(tempFloor.floorMap, tempFloor.floorColorMap, source.roomName, floorList, 0, 0, 1);
 
                 // Add return data
                 mapData[i] = new string[] { mapTitle, imagePath };

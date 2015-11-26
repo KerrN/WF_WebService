@@ -293,6 +293,44 @@ namespace WF_webService
             }
         }
 
+        public int ServiceColor(int id)
+        {
+            string sql = "SELECT Campus_location_Catagories_Color FROM campus_location_categories WHERE Campus_Location_Category_Id = (SELECT Campus_Location_Category_ID FROM campus_locations WHERE Waypoint_ID = "+id+")";
+            try
+            {
+                using (MySqlConnection dbConn = new MySqlConnection(connStr))
+                {
+                    // Initialise
+                    MySqlCommand roomSQL = new MySqlCommand(sql, dbConn);
+                    MySqlDataReader dbReader;
+
+                    // Open connection
+                    dbConn.Open();
+                    // Excecute Query
+                    dbReader = roomSQL.ExecuteReader();
+                    int count = 0;
+                    // While the reader has a next-row
+                    int i = -1;
+                    while (dbReader.Read())
+                    {
+                        // Get all values as temp values
+                        i = (int)dbReader["Campus_location_Catagories_Color"];
+                        count++;
+                    }
+                    if(count == 0)
+                        return -1;
+                    else
+                        return i;
+
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            return -1;
+        }
+
         // Returns SortedList<int WaypointID, string RoomName> from Waypoints
         // Requires WHERE Campus clause as input
         public string[][] GetRooms(string CampusID)

@@ -30,10 +30,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfKeyValueOfintstring" nillable="true" type="tns:ArrayOfKeyValueOfintstring" />
-  <xs:complexType name="ArrayOfdouble">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="double" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfdouble" nillable="true" type="tns:ArrayOfdouble" />
 </xs:schema>

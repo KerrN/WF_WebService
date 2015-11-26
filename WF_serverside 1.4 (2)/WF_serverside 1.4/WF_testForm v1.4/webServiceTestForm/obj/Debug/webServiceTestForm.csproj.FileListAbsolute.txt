@@ -78,3 +78,12 @@ C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm
 C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.Form1.resources
 C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.Properties.Resources.resources
 C:\Users\041402465\Downloads\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.csproj.GenerateResource.Cache
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\bin\Debug\webServiceTestForm.exe.config
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.exe
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.pdb
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\bin\Debug\webServiceTestForm.exe
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\bin\Debug\webServiceTestForm.pdb
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.csprojResolveAssemblyReference.cache
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.Form1.resources
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.Properties.Resources.resources
+C:\Users\041402465\Desktop\GitHub\WF_WebService\WF_serverside 1.4 (2)\WF_serverside 1.4\WF_testForm v1.4\webServiceTestForm\obj\Debug\webServiceTestForm.csproj.GenerateResource.Cache

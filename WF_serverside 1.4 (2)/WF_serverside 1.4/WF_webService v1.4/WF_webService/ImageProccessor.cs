@@ -33,7 +33,7 @@ namespace WF_webService
             }
             catch (Exception ex)
             {
-                return "cant parse room number";
+                return "cant parse room number "+roomName;
             }
 
             long timeStamp = DateTime.Now.Ticks;
@@ -235,96 +235,104 @@ namespace WF_webService
                     output = s;
                 }
             }
-            if (output == null)
+            if (output != null)
             {
-                string mess = "shit\n\n "+roomNumber+"\n";
-                foreach(Sampled s in samples)
+
+                try
                 {
-                    mess += s.toString()+"\n";
-                }
-                throw new MyException(mess);
-            }
 
-            try
-            {
-                
-              
-                int topbounds = output.getTop();
-                int leftbounds = output.getLeft();
-                int rightbounds = output.getRight();
-                int bottombounds = output.getBottom();
 
-                int tempwidth = leftbounds - rightbounds;
-                int tempheight = bottombounds - topbounds;
+                    int topbounds = output.getTop();
+                    int leftbounds = output.getLeft();
+                    int rightbounds = output.getRight();
+                    int bottombounds = output.getBottom();
 
-           
+                    int tempwidth = rightbounds - leftbounds;
+                    int tempheight = bottombounds - topbounds;
+                    //throw new MyException("left: " + output.getLeft() + " ,right: " + output.getRight() + " ,top: " + output.getTop() + " ,bottom: " + output.getBottom()+" ,widthbounds: "+tempwidth+" ,heightbounds: "+tempheight+"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-                for (int y = 0; y < tempheight; y++)
-                {
-                    for (int x = 0; x < tempwidth; x++)
+
+                    for (int y = 0; y < tempheight; y++)
                     {
-                        if (img[width * (y + topbounds) + (x + rightbounds)] == output.getColor())
+                        for (int x = 0; x < tempwidth; x++)
                         {
-                            //img[width * (y + topbounds) + (x + rightbounds)] = -39424;
+                            if (img[width * (y + topbounds) + (x + leftbounds)] == output.getColor())
+                            {
+                                //img[width * (y + topbounds) + (x + rightbounds)] = -39424;
 
 
-                            image.SetPixel(x + rightbounds, y + topbounds, highlight);
+                                image.SetPixel(x + leftbounds, y + topbounds, highlight);
+                            }
+
                         }
-
                     }
                 }
-            }catch(Exception e)
-            {
-                throw new ApplicationException(output.toString(), e);
+                catch (Exception e)
+                {
+                    throw new ApplicationException(output.toString(), e);
+                }
             }
         }
 
         void sampleRooms(Color color)
         {
-            int sw = 8;
-            int sh = 8;
 
-            int topbounds = -1;
-            int leftbounds = (int)Math.Floor((double)width / sw) + 1;
-            int rightbounds = -1;
-            int bottombounds = (int)Math.Floor((double)height / sh) + 1;
+            int minX = 0;
+            int maxX = width;
+            int minY = 0;
+            int maxY = height;
+            int lowestX = width;
+            int lowestY = height;
+            int heighestX = 0;
+            int heighestY = 0;
 
 
-            for (int sy = 0; sy < Math.Floor((double)height / sh); sy++)
+
+
+
+
+            for (int sy = 0; sy < height; sy++)
             {
 
 
-                for (int sx = 0; sx < Math.Floor((double)width / sw); sx++)
+                for (int sx = 0; sx < width; sx++)
                 {
-                    if (img[(width * (sy * 8)) + (sx * 8)] == color && sx > rightbounds)
+                    if (img[(width * sy) + sx] == color && sx < maxX && maxX < width && sx < lowestX)
                     {
-                        rightbounds = (sx-2) * 8;
+                        minX = sx;
+                        if (sx < lowestX)
+                            lowestX = sx;
                     }
-                    if (img[(width * (sy * 8)) + (sx * 8)] == color && sx < leftbounds)
+                    if (img[(width * sy) + sx] == color && sx > minX && sx > heighestX)
                     {
-                        leftbounds = (sx + 8) * 8;
+                        maxX = sx;
+                        heighestX = sx;
                     }
 
-                    if (img[(width * (sy * 8)) + (sx * 8) + 8] == color && sy > topbounds)
+                    if (img[(width * sy) + sx] == color && sy > minY && maxY < height && sy < lowestY)
                     {
-                        topbounds = (sy - 1) * 8;
+                        minY = sy;
+                        if (sy < lowestY)
+                            lowestY = sy;
                     }
-                    if (img[(width * (sy * 8)) + (sx * 8)] == color && sy < bottombounds)
+                    if (img[(width * sy) + sx] == color && sy > minY && sy > heighestY)
                     {
-                        bottombounds = (sy + 2) * 8;
+                        maxY = sy;
+                        heighestY = sy;
                     }
 
 
                 }
 
             }
-            if (topbounds > -1 && rightbounds > -1)
-            {
-               
-                Sampled s = new Sampled(color, leftbounds, topbounds, rightbounds, bottombounds);
+
+           
+                Sampled s = new Sampled(color, lowestX, lowestY, heighestX, heighestY);
+                foreach(Sampled te in samples)
+                    if(te.getColor()==s.getColor())
+                        samples.Remove(te);
                 samples.Add(s);
             
-            }
         }
 
         void sampleColors()
@@ -450,7 +458,6 @@ namespace WF_webService
         {
             this.bottom = bottom;
         }
-
         public string toString()
         {
             return "color: "+color.R+" left: "+left+" right: "+right+" up: "+top+" down: "+bottom;

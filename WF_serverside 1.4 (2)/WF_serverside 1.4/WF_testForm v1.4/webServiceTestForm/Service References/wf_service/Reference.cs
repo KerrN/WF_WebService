@@ -22,11 +22,7 @@ namespace webServiceTestForm.wf_service {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private string buildingImagek__BackingFieldField;
-        
-        private string buildingTitlek__BackingFieldField;
-        
-        private double[] campusTok__BackingFieldField;
+        private string[] getAProperSOAPClientk__BackingFieldField;
         
         private string[][] mapsk__BackingFieldField;
         
@@ -40,41 +36,15 @@ namespace webServiceTestForm.wf_service {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<buildingImage>k__BackingField", IsRequired=true)]
-        public string buildingImagek__BackingField {
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<getAProperSOAPClient>k__BackingField", IsRequired=true)]
+        public string[] getAProperSOAPClientk__BackingField {
             get {
-                return this.buildingImagek__BackingFieldField;
+                return this.getAProperSOAPClientk__BackingFieldField;
             }
             set {
-                if ((object.ReferenceEquals(this.buildingImagek__BackingFieldField, value) != true)) {
-                    this.buildingImagek__BackingFieldField = value;
-                    this.RaisePropertyChanged("buildingImagek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<buildingTitle>k__BackingField", IsRequired=true)]
-        public string buildingTitlek__BackingField {
-            get {
-                return this.buildingTitlek__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.buildingTitlek__BackingFieldField, value) != true)) {
-                    this.buildingTitlek__BackingFieldField = value;
-                    this.RaisePropertyChanged("buildingTitlek__BackingField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Name="<campusTo>k__BackingField", IsRequired=true)]
-        public double[] campusTok__BackingField {
-            get {
-                return this.campusTok__BackingFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.campusTok__BackingFieldField, value) != true)) {
-                    this.campusTok__BackingFieldField = value;
-                    this.RaisePropertyChanged("campusTok__BackingField");
+                if ((object.ReferenceEquals(this.getAProperSOAPClientk__BackingFieldField, value) != true)) {
+                    this.getAProperSOAPClientk__BackingFieldField = value;
+                    this.RaisePropertyChanged("getAProperSOAPClientk__BackingField");
                 }
             }
         }

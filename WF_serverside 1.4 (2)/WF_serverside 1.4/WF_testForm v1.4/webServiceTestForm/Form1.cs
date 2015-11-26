@@ -107,7 +107,7 @@ namespace webServiceTestForm
                 int waypoint = Int32.Parse(txtPath_Waypoint.Text);
                 SOAP_ResolvePath result = service.ResolvePath(waypoint, dis);
                 testImgWaypoints = service.GetResolvePathLists(waypoint, dis);
-                text += "CampusTo: " + result.campusTok__BackingField[0] + ", " + result.campusTok__BackingField[1] + Environment.NewLine;
+                //text += "CampusTo: " + result.campusTok__BackingField[0] + ", " + result.campusTok__BackingField[1] + Environment.NewLine;
                 text += "Maps: " + Environment.NewLine;
                 foreach (string[] m in result.mapsk__BackingField)
                 {
