@@ -230,7 +230,7 @@ namespace WF_webService
                 string room = source.roomName;
                 if (isService != -1)
                     room = "X0" + isService;
-                string imagePath = new ImageProccessor().GenerateImage(tempFloor.floorMap, tempFloor.floorColorMap, source.roomName, floorList, 0, 0, 1);
+                string imagePath = new ImageProccessor().GenerateImage(tempFloor.floorMap, tempFloor.floorColorMap, room, floorList, 0, 0, 1);
 
                 // Add return data
                 mapData[i] = new string[] { mapTitle, imagePath };
