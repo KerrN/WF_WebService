@@ -68,7 +68,7 @@ namespace WF_webService
             now = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
             Console.Write("Colored in "+(now-last)+" millis");
             drawPoints(sequence,xanchor,yanchor,scale);
-            string serverDest = HostingEnvironment.ApplicationPhysicalPath + path + timeStamp.ToString()+".png";
+            string serverDest = HostingEnvironment.ApplicationPhysicalPath + path + timeStamp.ToString()+"_ROOM_"+roomName+".png";
             if(print(serverDest))
             {
                 return serverDest;
