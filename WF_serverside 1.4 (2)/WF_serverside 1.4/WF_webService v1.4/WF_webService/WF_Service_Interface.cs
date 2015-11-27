@@ -19,6 +19,9 @@ namespace WF_webService
         bool checkDBConn();
 
         [OperationContract]
+        void deleteImages(string[] urls);
+
+        [OperationContract]
         byte[] getImage(String path);
 
         [OperationContract]

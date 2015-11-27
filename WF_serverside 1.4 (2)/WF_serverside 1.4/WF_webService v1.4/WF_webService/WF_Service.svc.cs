@@ -38,6 +38,15 @@ namespace WF_webService
         }
 
         [WebMethod]
+        public void deleteImages(string[] urls)
+        {
+            foreach(string s in urls)
+            {
+                System.IO.File.Delete(s);
+            }
+        }
+
+        [WebMethod]
         // Test Database Connection
         public bool checkDBConn()
         {
