@@ -40,10 +40,25 @@ namespace WF_webService
         [WebMethod]
         public void deleteImages(string[] urls)
         {
-            foreach(string s in urls)
+           
+            foreach (string s in urls)
             {
+               
                 System.IO.File.Delete(s);
             }
+   
+        }
+
+        [WebMethod]
+        public void deleteImagesIOS(string urls)
+        {
+            String[] urlss = urls.Split(new[] { "#YOLOSWAG"},StringSplitOptions.None);
+            foreach (string s in urlss)
+            {
+
+                System.IO.File.Delete(s);
+            }
+
         }
 
         [WebMethod]
@@ -189,11 +204,13 @@ namespace WF_webService
                 if (w.floorID == currentFloor)
                 {
                     // Add the node to the current floors List<Waypoint>
+                    w.roomName = w.roomName.Trim();
                     temp.Add(w);
                 }
                 // Otherwise the new node is on a new floor
                 else
                 {
+                    temp.Add(w);
                     // Add the current floor-list to the list of floors
                     floorSequence.Add(temp);
                     // Create a new floor List<Waypoint>
@@ -230,8 +247,8 @@ namespace WF_webService
                 }
                 
                 // Generate the floor-map name
-                string buildingTitle = sourceBuilding.buildingName;
-                string floorTitle = "Floor " + tempFloor.floorID.ToString();
+                string buildingTitle = sourceBuilding.buildingName.Trim();
+                string floorTitle = "Floor " + tempFloor.floorID.ToString().Trim();
                 string mapTitle = buildingTitle + ", " + floorTitle;
 
                 // returns the final image
@@ -242,7 +259,7 @@ namespace WF_webService
                 string imagePath = new ImageProccessor().GenerateImage(tempFloor.floorMap, tempFloor.floorColorMap, room, floorList, 0, 0, 1);
 
                 // Add return data
-                mapData[i] = new string[] { mapTitle, imagePath };
+                mapData[i] = new string[] { mapTitle.Trim(), imagePath.Trim() };
                 // Increment index
                 i++;
                 

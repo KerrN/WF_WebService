@@ -30,6 +30,7 @@ namespace WF_webService
             try
             {
                 roomNumber = Int32.Parse(roomName.Substring(roomName.Length - 3));
+                roomNumber = roomNumber & 0xFF;
             }
             catch (Exception ex)
             {

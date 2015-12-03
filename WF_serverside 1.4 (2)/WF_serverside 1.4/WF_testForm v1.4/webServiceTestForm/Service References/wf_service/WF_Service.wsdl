@@ -20,6 +20,12 @@
   <wsdl:message name="WF_Service_Interface_checkDBConn_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkDBConnResponse" />
   </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_deleteImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteImages" />
+  </wsdl:message>
+  <wsdl:message name="WF_Service_Interface_deleteImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteImagesResponse" />
+  </wsdl:message>
   <wsdl:message name="WF_Service_Interface_getImage_InputMessage">
     <wsdl:part name="parameters" element="tns:getImage" />
   </wsdl:message>
@@ -83,6 +89,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/checkDBConn" message="tns:WF_Service_Interface_checkDBConn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/checkDBConnResponse" message="tns:WF_Service_Interface_checkDBConn_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="deleteImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/deleteImages" message="tns:WF_Service_Interface_deleteImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/deleteImagesResponse" message="tns:WF_Service_Interface_deleteImages_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getImage">
       <wsdl:input wsaw:Action="http://tempuri.org/WF_Service_Interface/getImage" message="tns:WF_Service_Interface_getImage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/WF_Service_Interface/getImageResponse" message="tns:WF_Service_Interface_getImage_OutputMessage" />
@@ -133,6 +143,15 @@
     </wsdl:operation>
     <wsdl:operation name="checkDBConn">
       <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/checkDBConn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteImages">
+      <soap:operation soapAction="http://tempuri.org/WF_Service_Interface/deleteImages" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

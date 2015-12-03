@@ -22,6 +22,9 @@ namespace WF_webService
         void deleteImages(string[] urls);
 
         [OperationContract]
+        void deleteImagesIOS(string urls);
+
+        [OperationContract]
         byte[] getImage(String path);
 
         [OperationContract]

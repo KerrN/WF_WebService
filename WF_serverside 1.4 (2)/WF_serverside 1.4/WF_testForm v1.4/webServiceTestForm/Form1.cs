@@ -35,6 +35,8 @@ namespace webServiceTestForm
                 if (service.checkServiceConn())
                 {
                     txtOutput.Text = "Web Service Connected!";
+                    string[] str = "helloIOSYSworld".Split(new[] { "IOSYS"},StringSplitOptions.None);
+                    txtOutput.Text = (str[0] + " " + str[1]);
                 }
                 else
                 {
@@ -108,12 +110,17 @@ namespace webServiceTestForm
                 SOAP_ResolvePath result = service.ResolvePath(waypoint, dis);
                 testImgWaypoints = service.GetResolvePathLists(waypoint, dis);
                 //text += "CampusTo: " + result.campusTok__BackingField[0] + ", " + result.campusTok__BackingField[1] + Environment.NewLine;
+                //String[] ss = new string[result.mapsk__BackingField.Count()];
                 text += "Maps: " + Environment.NewLine;
+                int index = 0;
                 foreach (string[] m in result.mapsk__BackingField)
                 {
                     text += "Name: " + m[0] + ", Path: " + m[1] + Environment.NewLine;
                     images.Add(imageFromStream(service.getImage(m[1])));
+                    //ss[index] = m[1];
+                    index++;
                 }
+               //MessageBox.Show( service.deleteImages(new String[] { "C:\\Inetpub\\vhosts\\student.mydesign.central.wa.edu.au\\httpdocs\\cf_Wayfinding_WebService\\/Img/TEST635846299800745456_ROOM_F110.png" }));
             }
             catch (Exception ex)
             {
@@ -122,7 +129,7 @@ namespace webServiceTestForm
 
             txtOutput.Text = text;
 
-            setImage(selectedImage);
+           setImage(selectedImage);
         }
 
         private void txtRoom_Campus_TextChanged(object sender, EventArgs e)
@@ -157,7 +164,7 @@ namespace webServiceTestForm
             
             string text = service.RunImageProcessor(RoomName.Text, temp,0,17,1);
             txtOutput.Text = text;
-            dbImage.BackgroundImage = imageFromStream(service.getImage(text));
+            //image.BackgroundImage = imageFromStream(service.getImage(text));
         }
 
         private Image imageFromStream(byte[] byteArrayIn)
